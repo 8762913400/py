@@ -1,49 +1,18 @@
 # py
-def add_task(tasks):
-  task = input("Enter the task: ")
-  tasks.append(task)
-  print(f"Task '{task}' added to the list.")
+import string
+import random 
 
-def view_tasks(tasks):
-  if not tasks:
-    print("To-do list is empty.")
-  else:
-    print("To-Do List:")
-    for index, task in enumerate(tasks, start=1):
-      print(f"{index}. {task}")
+def dp():
 
-def remove_task(tasks):
-  view_tasks(tasks)
-  try:
-    index = int(input("Enter the task number to remove: "))
-    if 1 <= index <= len(tasks):
-      removed_task = tasks.pop(index - 1)
-      print(f"Task '{removed_task}' removed.")
-    else:
-      print("Invalid task number.")
-  except ValueError:
-    print("Invalid input. Please enter a number.")
+  length = int(input("Enter the desired password length: "))
+  p = pg(length)
+  print("Generated password:", p)
 
-def main():
-  tasks = []
-  while True:
-    print("\nTo-Do List App")
-    print("1. Add task")
-    print("2. View tasks")
-    print("3. Remove task")
-    print("4. Quit")
-    choice = input("Enter your choice: ")
+def pg(length):
 
-    if choice == '1':
-      add_task(tasks)
-    elif choice == '2':
-      view_tasks(tasks)
-    elif choice == '3':
-      remove_task(tasks)
-    elif choice == '4':
-      break
-    else:
-      print("Invalid choice. Please try again.")
-
+  c = string.ascii_letters + string.digits + string.punctuation
+  p = ''.join(random.choice(c) for _ in range(length))
+  return p
+  
 if _name_ == "_main_":
-  main()
+  dp()
