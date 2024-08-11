@@ -1,0 +1,25 @@
+def calce():
+
+  n1 = float(input("Enter the first number: "))
+  n2 = float(input("Enter the second number: "))
+  mo = input("Enter operator (+, -, *, /): ")
+
+  if mo == '+':
+    result = n1 + n2
+  elif mo == '-':
+    result = n1 - n2
+  elif mo == '*':
+    result = n1 * n2
+  elif mo == '/':
+    if n2 == 0:
+      print("Error: Division by zero")
+      return
+    else:
+      result = n1 / n2
+  else:
+    print("Invalid operator")
+    return
+
+  print(f"{n1} {mo} {n2} = {result}")
+
+calce()
