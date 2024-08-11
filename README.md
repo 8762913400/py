@@ -1,3 +1,4 @@
+# py
 def add_task(tasks):
   task = input("Enter the task: ")
   tasks.append(task)
